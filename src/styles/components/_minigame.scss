@@ -1,0 +1,411 @@
+$scene_dim: 400px;
+$scene_dim_responsive: 280px;
+
+/* Scene (container) */
+
+.knight-scene {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.43;
+  // overflow: hidden;
+  // border-radius: 50%;
+
+  // Force to pause all when menu is open!
+  &.is-paused * {
+    animation-play-state: paused !important;
+  }
+
+  svg {
+      // clip-path: circle(180px at center);
+      width: 100%;
+      height: 100%;
+    }
+}
+
+/* Scene animations */
+
+.current-scene-in {
+  animation: sceneAnimationIn 6s forwards linear;
+}
+
+.current-scene-out {
+  animation: sceneAnimationOut 6s forwards linear;
+}
+
+.tree-group {
+  &.is-paused {
+    animation-play-state: paused !important;
+  }
+  animation: rollingTrees 30s infinite linear;
+}
+
+.cloud-group {
+  animation: rollingClouds 40s infinite linear;
+}
+
+.knight-group {
+  &.is-walking {
+    .body-group {
+      animation: simpleBounce .4s infinite;
+    }
+    .leg-2 {
+      animation: simpleBounce .2s .1s infinite;
+    }
+    .leg-1 {
+      animation: simpleBounce .2s infinite;
+    }
+    .helm-group {
+      animation: simpleBounce .4s infinite;
+    }
+  }
+}
+
+.scene-4 {
+  // big goblins hands
+  .hand-1 {
+    animation: goblinHand1 .4s infinite;
+  }
+  .hand-2 {
+    animation: goblinHand2 .4s infinite;
+  }
+}
+
+.scene-2 {
+  // big goblins hands
+  // .dragon-wing-front {
+  //   animation: dragonWingRotate 1s infinite;
+  // }
+  .dragon-head {
+    animation: simpleBounce 1s  infinite;
+  }
+}
+
+// Other transformations
+
+.cloud-group {
+  transform: translateX(80px);
+}
+
+.tree-group {
+  transform: translate(230px, 82px);
+}
+
+.feather-group {
+  transform-origin: 110px 120px;
+  animation: simpleRotate .4s .1s infinite;
+}
+
+// Set a initial position for all scenes
+.scene-group > g {
+  transform: translate(0px, -1000px);
+}
+
+/* Scene animation in and out */
+
+@keyframes sceneAnimationIn {
+  0% {transform: translate(0px, -13px); }
+  100% {transform: translate(-340px, -13px); }
+}
+
+@keyframes sceneAnimationOut {
+  0% {transform: translate(-340px, -13px); }
+  100% {transform: translate(-620px, -13px); }
+}
+
+/* Animation definitions */
+
+@keyframes simpleBounce {
+	40% {transform: translateY(-1px);}
+  100% {transform: translateY(0px);}
+}
+
+@keyframes simpleRotate {
+	40% {transform: rotate(2deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes goblinHand1 {
+  0% {transform: translateX(1px);}
+  100% {transform: translateX(-1px);}
+}
+
+@keyframes goblinHand2 {
+  0% {transform: translateX(-1px);}
+  100% {transform: translateX(1px);}
+}
+
+@keyframes dragonWingRotate {
+  0% {transform: rotate(-2deg);}
+  100% {transform: rotate(4deg);}
+}
+
+@keyframes rollingClouds {
+  100% {transform: translateX(-732px); }
+}
+
+@keyframes rollingTrees {
+  100% {transform: translate(-520px, 82px); }
+}
+
+/* SVG Elements */
+
+// Cloud positions
+
+@for $i from 1 through 4 {
+  $x: $i * 166px;
+  $y: (random(40) + 10) + px;
+  .cloud-group-item:nth-child(#{$i}) {
+    transform: translate($x, $y);
+  }
+}
+
+.tree {
+  fill: #e9f2c7;
+  stroke: #000;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+}
+
+.tree-trunk {
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+.ground, .helm-visor, .cls-6 {
+    fill: none;
+    stroke: black;
+    stroke-miterlimit: 10;
+}
+
+.ground {
+    stroke-width: 3px;
+}
+
+.armour-fill {
+    fill: #d6d6d6;
+}
+
+.armour-shadow {
+    opacity: .4;
+}
+
+.helm-visor {
+    stroke-width: 1.5px;
+}
+
+.knight-house-color {
+    fill: #f2a7a7;
+}
+
+.cloud-color {
+    fill: #d3dddc;
+}
+
+.cloud-shadow {
+    opacity: 0.1;
+}
+
+.fake-bg {
+  fill: #fc5a56;
+  opacity: 0;
+}
+
+.castle-color {
+  fill: #c5efee;
+}
+
+.window-light-color {
+  fill: #e5dbb1;
+}
+
+.castle-top-shadow {
+  // background: rgba(0,0,0,.2);
+  opacity: .1;
+}
+
+.flag-color {
+  fill: #e58383;
+}
+
+.dragon {
+  transform: scale(.9) translate(72px, 15px);
+}
+
+// .dragon-wing-front {
+//   transform-origin: 534px 92px;
+//   transform: rotate(-2deg);
+// }
+
+.dragon-color {
+  fill: #fc5a56;
+}
+
+.dragon-color-shadow {
+  fill: #b25849;
+}
+
+.dragon-color-shadow, .dragon-color, .dragon-belly {
+  stroke: #000;
+  stroke-miterlimit: 10;
+}
+
+.dragon-color-shadow, .dragon-color, .dragon-belly {
+  stroke-width: 1.5px;
+}
+
+.dragon-belly {
+  fill: #e0dfce;
+}
+
+.dragon-head-shadow {
+  opacity: 0.1;
+}
+
+.dragon-color {
+  fill: #d8745d;
+}
+
+.village-thingie-1 {
+  fill: #e2e0d3;
+}
+
+.village-thingie-1, .village-thingie-2, .village-thingie-3, .village-thingie-4, .village-thingie-5, .village-thingie-6 {
+  stroke: #000;
+  stroke-miterlimit: 10;
+}
+
+.village-thingie-1, .village-thingie-2 {
+  stroke-width: 2px;
+}
+
+.village-thingie-2 {
+  fill: #c1bfb4;
+}
+
+.village-shad-1 {
+  opacity: 0.1;
+}
+
+.village-thingie-3 {
+  fill: #e5dbb1;
+}
+
+.village-thingie-3, .village-thingie-4, .village-thingie-5, .village-thingie-6 {
+  stroke-width: 1.5px;
+}
+
+.village-thingie-4 {
+  fill: none;
+}
+
+.village-thingie-5 {
+  fill: #ede6e7;
+}
+
+.village-thingie-6 {
+  fill: #ea96a4;
+}
+
+.goblin-leg, .goblin-speer {
+  fill: none;
+}
+
+.goblin-leg, .goblin-flesh, .goblin-speer {
+  stroke: #000;
+  stroke-miterlimit: 10;
+}
+
+.goblin-armour {
+  fill: #d6d6d6;
+}
+
+.goblin-flesh {
+  fill: #5e9d00;
+}
+
+.goblin-flesh, .goblin-speer {
+  stroke-width: 1.5px;
+}
+
+.goblin-shield {
+  fill: #3a3a3a;
+}
+
+.goblin-group {
+  transform: translateX(10px);
+}
+
+/* Dialog */
+
+.knight-dialog,
+.knight-dialog-answer {
+  position: absolute;
+  top: calc(50% + 3rem);
+  left: 0;
+  z-index: 10;
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.knight-dialog-answer {
+  width: 80%;
+  left: 10%;
+  text-align: center;
+}
+
+.knight-dialog {
+  width: $scene_dim_responsive;
+  text-align: center;
+  @media(min-width: 769px) {
+    width: $scene_dim;
+  }
+  &.no-interaction {
+    pointer-events: none;
+  }
+}
+
+.knight-start-dialog-button {
+  position: absolute !important;
+  left: calc(50% - 50px);
+  top: calc(50% + 50px);
+  width: 100px;
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.knight-dialog-result {
+  display: block;
+  margin: 0 0 .500rem 0;
+}
+
+.knight-dialog-balloon {
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+
+  @media(min-width: 769px) {
+    top: 120px;
+  }
+
+  &.is-hidden {
+    display: none !important;
+  }
+
+  span {
+    text-align: center;
+    font-style: italic;
+    background: #fff;
+    border-radius: 4px;
+    border: solid 2px #000;
+    padding: .125rem .500rem;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+}
+

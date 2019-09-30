@@ -1,0 +1,21 @@
+/* Basic var declerations */
+$primary: #F95858;
+
+/* For use inside of components */
+:root {
+    --primary: #F95858;
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Khula:800|Lora:400,700');
+
+/* Basics */
+@import "_reset.scss";
+@import "_utils.scss";
+
+/* Layout */
+@import "layout/_navigation.scss";
+
+/* Components */
+@import "components/_minigame.scss";
+@import "components/_page-grid.scss";
