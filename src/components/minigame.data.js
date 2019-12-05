@@ -4,7 +4,7 @@ const adventure = {
   scenes: 4,
 
   dialog: [
-    'Hi you want to storm a castle?!',
+    'Hi! wanna storm a castle?!',
     'Don\'t judge me!',
     'I have come to slay a dragon!',
     'Man.. I could go for some coco puffs right now!',
@@ -14,7 +14,7 @@ const adventure = {
     'Welease the kwaken!',
     'My sword is shiny and sharp!',
     'You\'re a hairy wizard!',
-    'I polished my armour!',
+    'I polished my armour yesterday!',
   ],
 
   sceneDialog: [
@@ -32,7 +32,7 @@ const adventure = {
         'you attack',
       ],
       resolutions: [
-        'Songs will be sung of heroic deeds... but alas not of you.',
+        'Songs will be sung of heroic deeds... alas not of you.',
         'Honor demands you storm the tower and liberate its oppressed pheasants... You weigh your options and decide to come back when you have more men and a few siege engines...',
       ]
     },
@@ -44,8 +44,8 @@ const adventure = {
         'you attack',
       ],
       resolutions: [
-        '\'I fear no beast!\' You whisper, and you walk on...',
-        'You approach the dragon. It snorts and you startle easily. You scamble away... glad it did not notice you...',
+        '\'I fear no beast!\' You quietly whisper, and you walk on...',
+        'You approach the dragon. It snorts and you startle easily. You sneak away... glad it did not notice you!',
       ]
     },
     ///
@@ -56,8 +56,8 @@ const adventure = {
         'you eat and drink',
       ],
       resolutions: [
-        'You drink heavily without eating. When you leave the next day, people snicker at you. You discover there is a giant dick drawn on your helm...',
-        'You eat and drink well. When you leave the next day, you swear your armour shrunk overnight...',
+        'You drink heavily without eating. The next day people laugh at you for something large and erect drawn on your helm.',
+        'You eat and drink well. The next day, your armour is less comfy then before',
       ]
     },
     ///
@@ -68,8 +68,8 @@ const adventure = {
         'you attack',
       ],
       resolutions: [
-        'As they have already seen you... You try to reason with them, but in the end you still have to pay the little you own...',
-        'You feel confident, but flee anyway...',
+        'They already see you, you are next to them... You try and reason with them, but they take your lunch money anyway.',
+        'You do the most non-obvious thing and attack, you trip and your sword brak',
       ]
     },
     ///

@@ -37,7 +37,7 @@
     "clean": "rm -Rf docs/ public/",
     "build": "npm run clean && gatsby build && cp ./src/CNAME public/ && mv ./public ./docs",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "gatsby serve",
+    "start": "gatsby develop",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 import SiteContext from '../context/SiteContext'
 import IconButton from './styled/icon-button.js';
@@ -8,9 +8,9 @@ const Navigation = props => {
   const context = useContext(SiteContext);
 
   // Works!
-  useEffect(() => {
-    console.log('context', context);
-  }, []);
+  // useEffect(() => {
+  //   console.log('context', context);
+  // }, []);
 
   return (
     <React.Fragment>
