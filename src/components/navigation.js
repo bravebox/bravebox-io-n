@@ -59,7 +59,7 @@ const Navigation = props => {
                 <p>
                   Hi folks. I am a 39 year old creative front-end dev from the Netherlands. I design and style UI/UX components, websites and applications.
                 </p>
-                <p><a href="https://drive.google.com/open?id=1QeZOIQIBTM8_3F-ZMmHsLz-LsGKG6OED" target="_blank" rel="noopener noreferrer" alt="Mick Schouten C.V.">Download C.V.</a></p>
+                <p><a href="https://drive.google.com/open?id=1tYxoyPE-8WlVrogiTDqxx2iMNq_32pDX" target="_blank" rel="noopener noreferrer" alt="Mick Schouten C.V.">Download C.V.</a></p>
                 <p>This site is partly under construction.</p>
                 <p><i><small>This website was made with <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">Gatsby (React)</a></small></i></p>
               </div>
